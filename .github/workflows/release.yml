@@ -1,7 +1,7 @@
 name: Create release
 
 on:
-  push:
+  workflow_dispatch:
     tags:
       - '[0-9]+.[0-9]+.[0-9]+'
 
@@ -32,8 +32,8 @@ jobs:
         with:
           retention-days: 1
           compression-level: 0
-          name: evaron-aio-artifact
-          path: "./Evaron-AIO.zip"
+          name: aio-artifact
+          path: "./AIO.zip"
 
   create-release:
     runs-on: ubuntu-latest
@@ -48,10 +48,10 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: evaron-aio-artifact
+          name: aio-artifact
           path: "./"
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "./Evaron-AIO.zip"
+          artifacts: "./8BAIO.zip"
           bodyFile: "./CHANGELOG.md"

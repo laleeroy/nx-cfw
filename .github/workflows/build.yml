@@ -1,7 +1,7 @@
 name: Build
 
 on:
-  push:
+  workflow_dispatch:
     branches:
       - master
     paths-ignore:
@@ -41,5 +41,5 @@ jobs:
         with:
           retention-days: 1
           compression-level: 0
-          name: evaron-aio-artifact
-          path: "./Evaron-AIO.zip"
+          name: aio-artifact
+          path: "./AIO.zip"
