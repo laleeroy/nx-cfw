@@ -1,6 +1,7 @@
 name: Build
 
 on:
+  push:
   workflow_dispatch:
     branches:
       - master
@@ -33,6 +34,8 @@ jobs:
           ls -l ./
           pwd
       - name: Create pack
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
         run: |
           chmod +x ./build.sh
           ./build.sh
