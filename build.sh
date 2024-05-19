@@ -16,7 +16,7 @@ prepare_hekate() {
 }
 
 prepare_atmosphere() {
-	curl -H "Authorization: Bearer $GITHUB_TOKEN" -O -L https://github.com/laleeroy/Atmosphere-/releases/download/1/atmosphere-1.7.0-master-6d62a2439-hbl-+hbmenu-.zip --output-dir $TMP_DIR
+	curl -H "Authorization: Bearer $GITHUB_TOKEN" -O -L https://github.com/laleeroy/Atmosphere-/releases/download/1/atmosphere-1.7.0-master-00354a99e.zip --output-dir $TMP_DIR
 	ls $TMP_DIR
 	$UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
 }
